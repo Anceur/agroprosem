@@ -419,6 +419,8 @@ strong {
 }
 
 .dropdown-item {
+  background: black;
+  width: 200px;
   display: inline-block;
   color: var(--p-bg-color);
   font-size: var(--menu-font-size);
@@ -436,7 +438,7 @@ strong {
 .dropdown-item:active,
 .dropdown-item:focus, 
 .dropdown-item:hover {
-  background: transparent;
+  background: black;
   color: var(--primary-color);
 }
 
@@ -766,8 +768,8 @@ strong {
 /*---------------------------------------
   DONATE              
 -----------------------------------------*/
-.donate-section {
-  background-image: url('../images/istockphoto-1244935634-2048x2048-Photoroom.webp');
+/* .donate-section {
+  background-image: url('../images/petit-image/Seedsqw.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -775,7 +777,7 @@ strong {
   padding-top: 150px;
   padding-bottom: 150px;
   height: 70vh;
-}
+} */
 
 .donate-form {
   background: var(--white-color);

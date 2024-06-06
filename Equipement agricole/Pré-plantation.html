@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS FILES -->        
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="../css/templatemo-kind-heart-charity.css" rel="stylesheet">
+
+        <title>PROSEM</title>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-8 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-geo-alt me-2"></i>
+                            Part 06 prop 83 local 02 sirat Mostaganem 
+                        </p>
+    
+                        <p class="d-flex mb-0">
+                            <i class="bi-envelope me-2"></i>
+    
+                            <a href="mailto:info@company.com">
+                                Prosemalgerie@yahoo.com
+                            </a>
+                        </p>
+                    </div>
+    
+                    <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-twitter"></a>
+                            </li>
+    
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-facebook"></a>
+                            </li>
+    
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-instagram"></a>
+                            </li>
+    
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-youtube"></a>
+                            </li>
+    
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-whatsapp"></a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </div>
+            </div>
+        </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/agro/received_409799891955284.jpeg-removebg-preview-Photoroom-removebg-preview-removebg-preview.png" class="logo img-fluid" alt="Kind Heart Charity">
+                <span>
+                    Crédibilité 
+                    <small>Des Services</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../index.html">Accueil</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="../Présentation.html">Présentation</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Media.html">Media</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="../Catalogue.html">Catalogue</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nos produits</a>
+
+                        <ul class="dropdown-menu dropdown-menu-light custom-dropdown" aria-labelledby="navbarLightDropdownMenuLink">
+                       
+                           <li><a class="dropdown-item" href="../Agrochimie.html">Agrochimie</a></li>
+                               
+                           <li><a class="dropdown-item" href="../Agrochimie.html">Apiculture</a></li>
+
+                           <li><a class="dropdown-item" href="../Equipement_Agricole.html">Equipement Agricole</a></li>
+
+                           <li><a class="dropdown-item" href="../Les_Semences.html">Les Semences</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="#section_6">Contact</a>
+                    </li>
+
+                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="product"></div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDtR9e2E5rPzTw6KH18JbFZWI44nfbFeZk",
+            authDomain: "agroboumediene.firebaseapp.com",
+            projectId: "agroboumediene",
+            storageBucket: "agroboumediene.appspot.com",
+            messagingSenderId: "327726045113",
+            appId: "1:327726045113:web:a988ee175852a46d730868",
+            measurementId: "G-T3H0541NDK"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        const storage = getStorage(app);
+        const database = getDatabase(app);
+
+        function fetchAndDisplayPulverisateur() {
+    const productRef = ref(database, 'equipementAgricole/preplantation');
+    onValue(productRef, (snapshot) => {
+        const data = snapshot.val();
+        const preplantation = Object.entries(data).map(([key, value]) => ({
+            ...value,
+            id: key
+        }));
+        document.getElementById("product").innerHTML = preplantation.map(product =>
+            `<div class="product">
+                <h2>${product.name}</h2>
+                <img class="image" src="${product.imageSrc}" alt="${product.name}">
+                <h3>Description</h3>
+                <p class="description">${product.detaille}</p>
+            </div>`
+        ).join('');
+    });
+}
+
+// استدعاء الدالة لجلب وعرض البيانات عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', fetchAndDisplayPulverisateur);
+    
+    </script>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 mb-4">
+                <img src="images/agro/received_409799891955284.jpeg-removebg-preview-Photoroom-removebg-preview-removebg-preview.png" style="    margin-top: 89px;
+                width: 200px;" class="logofooter" alt="">
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+             <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.708732670788!2d0.18442329999999998!3d35.78253050000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1281f1b22f8a24f5%3A0x20977659d55aff26!2sAgriculture%20chez%20Charef!5e0!3m2!1sar!2sdz!4v1717628594815!5m2!1sar!2sdz" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mx-auto">
+                <h5 class="site-footer-title mb-3">Contact Infomation</h5>
+
+                <p class="text-white d-flex mb-2">
+                    <i class="bi-telephone me-2"></i>
+
+                    <a href="tel: 120-240-9600" class="site-footer-link">
+                        0667194301
+                    </a>
+                </p>
+
+                <p class="text-white d-flex">
+                    <i class="bi-envelope me-2"></i>
+
+                    <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                        Prosemalgerie@yahoo.com
+                    </a>
+                </p>
+
+                <p class="text-white d-flex mt-3">
+                    <i class="bi-geo-alt me-2"></i>
+                    Mostaganem 
+                </p>
+
+                <a href="#" class="custom-btn btn mt-3">Obtenir une direction</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-footer-bottom">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-md-7 col-12">
+                    <p class="copyright-text mb-0">Copyright © <a href="#">PROSEM</a>  Org.
+                    </p>
+                </div>
+                
+                <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                    <ul class="social-icon">
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-twitter"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-linkedin"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://youtube.com/templatemo" class="social-icon-link bi-youtube"></a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
