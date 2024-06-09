@@ -10,6 +10,8 @@
 
         <link href="../css/templatemo-kind-heart-charity.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="../css/fongicides.css">
+
         <title>PROSEM</title>
     </head>
     <body>
@@ -117,7 +119,7 @@
         </div>
     </nav>
 
-    <div id="product"></div>
+    <div id="product" style="cursor: pointer;" click()></div>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
@@ -151,11 +153,10 @@ onValue(productRef, (snapshot) => {
         id: key
     }));
     document.getElementById("product").innerHTML = fongicides.map(product =>
+  
         `<div class="product">
             <h2>${product.name}</h2>
             <img class="image" src="${product.imageSrc}" alt="${product.name}">
-            <h3>Description</h3>
-            <p class="description">${product.detaille}</p>
         </div>`
     ).join('');
 });
