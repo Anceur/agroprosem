@@ -126,6 +126,26 @@
                     </ul>
                 </div>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                  let lastScrollTop = 0;
+                  const navbar = document.querySelector('.navbar');
+                  
+                  window.addEventListener('scroll', function() {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > lastScrollTop) {
+                      // Scrolling down
+                      navbar.classList.add('navbar-hidden');
+                    } else {
+                      // Scrolling up
+                      navbar.classList.remove('navbar-hidden');
+                    }
+                    
+                    lastScrollTop = scrollTop;
+                  });
+                });
+                </script>                
         </nav>
 
         <main>
@@ -446,7 +466,10 @@
 
                                     <p class="d-flex mb-2">
                                         <i class="bi-geo-alt me-2"></i>
-                                        Mostaganem
+
+                                        <a style="color: var(--secondary-color);">
+                                            Mostaganem
+                                        </a>
                                     </p>
 
                                     <p class="d-flex mb-2">
@@ -531,9 +554,11 @@
                             </a>
                         </p>
 
-                        <p class="text-white d-flex mt-3">
+                        <p class="text-white d-flex">
                             <i class="bi-geo-alt me-2"></i>
-                            Mostaganem 
+                            <a class="site-footer-link">
+                                Mostaganem
+                            </a>
                         </p>
 
                         <a href="#" class="custom-btn btn mt-3">Obtenir une direction</a>
