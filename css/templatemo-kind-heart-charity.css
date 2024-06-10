@@ -182,7 +182,6 @@ strong {
   padding-top: 100px;
   padding-bottom: 100px;
 }
-
 .section-bg {
   background-color: #04365B;
 }
@@ -279,6 +278,7 @@ strong {
   margin-bottom: 24px;
   padding: 40px;
   height: 90%;
+  z-index: 10;
 }
 
 .custom-text-box-image {
@@ -286,6 +286,7 @@ strong {
   width: 100%;
   height: 90%;
   object-fit: cover;
+  z-index: 10;
 }
 
 .custom-text-box-icon {
@@ -965,11 +966,11 @@ blockquote::before {
   background-color:#3C7A45;
   border-radius: 50%;
   position: absolute;
-  top: -100px;
-  left: -30px;
+  top: 50px;
+  left: -20px;
   margin: auto;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 .testimonial-section::after {
@@ -977,10 +978,11 @@ blockquote::before {
   background: var(--custom-btn-bg-color);
   border-radius: 50%;
   position: absolute;
-  bottom: -110px;
-  right: -80px;
-  width: 350px;
-  height: 350px;
+  bottom: 100px;
+  right: -20px;
+  width: 150px;
+  height: 150px;
+  z-index: 1;
 }
 
 #testimonial-carousel .carousel-caption {
@@ -988,6 +990,18 @@ blockquote::before {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+#testimonial-carousel{
+  z-index: 10;
+}
+
+#testimonial-carousel p{
+  z-index: 100;
+  color: var(--white-color);
+  line-height: 1.4rem;
+  font-size: 1.0rem;
+  margin-top: 20px;
 }
 
 #testimonial-carousel .carousel-title {
