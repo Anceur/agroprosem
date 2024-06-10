@@ -360,7 +360,16 @@ strong {
   z-index: 9;
   padding-top: 0;
   padding-bottom: 0;
+  transition: transform 0.3s ease-in-out;
+
 }
+
+/* Add a class to hide the navbar */
+.navbar-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in;
+}
+
 
 .navbar-brand {
   color: #3C7A45;
@@ -419,7 +428,7 @@ strong {
 }
 
 .dropdown-item {
-  background: black;
+  background: white;
   width: 200px;
   display: inline-block;
   color: var(--p-bg-color);
@@ -438,8 +447,8 @@ strong {
 .dropdown-item:active,
 .dropdown-item:focus, 
 .dropdown-item:hover {
-  background: black;
-  color: var(--primary-color);
+  background-color: var(--section-bg-color);
+  color: green;
 }
 
 .dropdown-toggle::after {
@@ -582,19 +591,17 @@ strong {
   min-height: 680px;
 }
 
-/* #hero-slide .carousel-caption {
-  background: var(--white-color);
-  clip-path: polygon(100% 100%, 100% 150px, 0 100%);
+#hero-slide .carousel-caption {
   color: var(--secondary-color);
-  top: 1px;
-  bottom: -1px;
-  right: 0;
-  left: auto;
-  text-align: right;
-  min-width: 680px;
-  min-height: 680px;
-  padding: 100px 100px 50px 100px;
-} */
+  text-transform: capitalize;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+
 
 .carousel-image {
   display: block;
@@ -611,13 +618,12 @@ strong {
 
 #hero-slide .carousel-indicators {
   margin-right: 0;
-  margin-left: 22px;
   justify-content: inherit;
 }
 
 .carousel-control-next, 
 .carousel-control-prev {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .carousel-control-next-icon, 
@@ -665,10 +671,11 @@ strong {
 
 .featured-block:hover .featured-block-text {
   margin-top: 0;
+  color: #3c7a45;
 }
 
 .featured-block-text {
-  color: #3C7A45;
+  color: #3c7a4500;
   font-size: var(--h5-font-size);
   margin-top: 20px;
   transition: all 0.5s;
@@ -1285,7 +1292,7 @@ blockquote::before {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-  background-color: var(--site-footer-bg-color);
+  background-color: var(--section-bg-color);
   padding-top: 70px;
 }
 
@@ -1307,7 +1314,7 @@ blockquote::before {
 }
 
 .site-footer-link {
-  color: var(--white-color);
+  color: var(--secondary-color);
 }
 
 .copyright-text {
@@ -1410,66 +1417,66 @@ blockquote::before {
 
 @media screen and (max-width: 991px) {
   h1 {
-    font-size: 42px;
+    font-size: 2.5rem; /* Adjust font size for h1 */
   }
 
   h2 {
-    font-size: 36px;
+    font-size: 2.5rem; /* Adjust font size for h2 */
   }
 
   h3 {
-    font-size: 32px;
+    font-size: 2rem; /* Adjust font size for h3 */
   }
 
   h4 {
-    font-size: 28px;
+    font-size: 1.8rem; /* Adjust font size for h4 */
   }
 
   h5 {
-    font-size: 20px;
+    font-size: 1.5rem; /* Adjust font size for h5 */
   }
 
   h6 {
-    font-size: 18px;
+    font-size: 1.3rem; /* Adjust font size for h6 */
   }
 
   .section-padding {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .hero-form {
-    padding-bottom: 40px;
+    padding-bottom: 3rem;
   }
 
   .donate-form {
-    padding: 35px;
+    padding: 3rem;
   }
 
   .navbar {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .navbar-expand-lg .navbar-nav {
-    padding-bottom: 30px;
+    padding-bottom: 2rem;
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
-    padding: 8px 20px;
+    padding: 1rem 1.5rem;
   }
   
   .dropdown:hover .dropdown-menu {
     display: block;
     position: relative;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    left: 20px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    left: 1rem;
   }
 
   .site-header .social-icon {
     text-align: left;
-    margin-top: 5px;
+    margin-top: 0.5rem;
   }
 
   .hero-section-full-height {
@@ -1485,55 +1492,60 @@ blockquote::before {
     height: inherit;
   }
 
+  #hero-slide .carousel-caption {
+    width: 90%; /* Adjust width for smaller screens */
+    font-size: 1.0rem; /* Adjust font size for smaller screens */
+  }
+
   .carousel-control-prev {
-    left: 12px;
+    left: 1rem;
   }
 
   .carousel-control-next {
-    right: 12px;
+    right: 1rem;
   }
 
   .carousel-control-next-icon, 
   .carousel-control-prev-icon {
     opacity: 1;
-    width: 60px;
-    height: 60px;
+    width: 3rem;
+    height: 3rem;
   }
 
   .news-detail-header-section {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   .cta-section::before {
-    width: 150px;
-    height: 150px;
+    width: 10rem;
+    height: 10rem;
   }
 
   .cta-section::after {
-    bottom: -60px;
-    width: 100px;
-    height: 100px;
+    bottom: -4rem;
+    width: 6rem;
+    height: 6rem;
   }
 
   .cta-section .row {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .volunteer-section::after {
-    width: 300px;
-    height: 300px;
+    width: 20rem;
+    height: 20rem;
   }
 
   .testimonial-section::before {
-    width: 150px;
-    height: 150px;
+    width: 8rem;
+    height: 8rem;
   }
 
   .testimonial-section::after {
-    width: 200px;
-    height: 200px;
+    width: 12rem;
+    height: 12rem;
   }
 
   #testimonial-carousel .carousel-caption {
@@ -1541,32 +1553,32 @@ blockquote::before {
   }
 
   blockquote {
-    padding: 70px 30px 30px 30px;
+    padding: 5rem 2rem 2rem 2rem;
   }
 
   .about-image {
     width: inherit;
-    height: 450px;
+    height: 25rem;
   }
 
   .volunteer-image {
-    width: 250px;
-    height: 250px;
+    width: 10rem;
+    height: 10rem;
     margin: 0;
   }
 
   .custom-text-block {
-    padding: 20px 0 0 0;
+    padding: 1rem 0 0 0;
   }
 
   .custom-text-box,
   .volunteer-form {
-    padding: 30px;
+    padding: 2rem;
   }
 
   .counter-number, 
   .counter-number-text {
-    font-size: var(--h2-font-size);
+    font-size: 3rem;
   }
 
   .contact-info-wrap {
@@ -1574,7 +1586,7 @@ blockquote::before {
   }
 
   .site-footer {
-    padding-top: 50px;
+    padding-top: 4rem;
   }
 
   .copyright-text-wrap {
@@ -1583,12 +1595,12 @@ blockquote::before {
 
   .site-footer-bottom {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 4rem;
   }
 
   .site-footer-bottom .footer-menu {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -1596,77 +1608,80 @@ blockquote::before {
   .hero-section-full-height,
   #hero-slide .carousel-item,
   .carousel-image {
-    min-height: 520px;
+    min-height: 30rem;
   }
 
   #hero-slide .carousel-caption {
-    clip-path: polygon(100% 100%, 100% 100px, 0 100%);
-    padding-right: 50px;
     min-width: inherit;
-    min-height: inherit;
+    font-size: 0.8rem; /* Adjust font size for hero caption */
   }
 }
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 40px;
+    font-size: 2.8rem;
   }
 
   h2 {
-    font-size: 28px;
+    font-size: 1.8rem;
   }
 
   h3 {
-    font-size: 26px;
+    font-size: 1.6rem;
   }
 
   h4 {
-    font-size: 22px;
+    font-size: 1.4rem;
   }
 
   h5 {
-    font-size: 20px;
+    font-size: 1.2rem;
   }
 
   #hero-slide .carousel-caption {
-    min-width: inherit;
-    padding-bottom: 30px;
+    font-size: 2.0rem;
   }
 
   .carousel-control-next-icon, 
   .carousel-control-prev-icon {
-    width: 45px;
-    height: 45px;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .volunteer-image {
-    width: 150px;
-    height: 150px;
+    width: 6rem;
+    height: 6rem;
   }
 
   .volunteer-section::after {
-    width: 200px;
-    height: 200px;
+    width: 12rem;
+    height: 12rem;
   }
 
   .testimonial-section::before {
-    top: -50px;
-    width: 100px;
-    height: 100px;
+    top: -3rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   .testimonial-section::after {
-    bottom: -150px;
-    width: 200px;
-    height: 200px;
+    bottom: -8rem;
+    width: 12rem;
+    height: 12rem;
   }
 
   .social-share .tags-block {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
 
   .donate-form {
-    padding: 25px;
+    padding: 1.5rem;
   }
 }
 
+@media screen and (max-width: 580px) {
+  #hero-slide .carousel-caption {
+    width: 95%; /* Adjust width for smaller screens */
+    font-size: 1.4rem; /* Adjust font size for smaller screens */
+  }
+}
