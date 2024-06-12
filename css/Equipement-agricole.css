@@ -103,12 +103,13 @@
 
 
 h3 {
+    font-size: xx-large;
     text-align: center;
-    margin-top: 20px;
+    padding: 5%;
 }
 .equipment-section {
-    padding: 20px;
-    background-color: #f9f9f9;
+    padding: 10%;
+    background-color:  var(--white-color);
 }
 
 .equipment-grid {
