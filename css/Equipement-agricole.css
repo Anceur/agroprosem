@@ -26,8 +26,8 @@
 .overlay-container {
     position: absolute;
     top: 50%;
-    left: 15%;
-    transform: translate(-50%, -50%);
+    left: 5%;
+    transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
     padding: 20px; /* Space around the image */
     border-radius: 10px; /* Rounded corners for the background */
@@ -41,23 +41,22 @@
     height: auto; /* Maintain aspect ratio */
 }
 
+
 /* Media query for large screens */
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .overlay-container {
-        top: 45%;
-        left: 20%;
+        left: 10%;
         padding: 18px;
     }
     .overlay-image {
-        width: 130px;
+        width: 150px;
     }
 }
 
 /* Media query for medium screens (tablets) */
 @media (max-width: 992px) {
     .overlay-container {
-        top: 40%;
-        left: 15%;
+        left: 10%;
         padding: 16px;
     }
     .overlay-image {
@@ -68,7 +67,6 @@
 /* Media query for small screens (phones) */
 @media (max-width: 768px) {
     .overlay-container {
-        top: 35%;
         left: 10%;
         padding: 14px;
     }
@@ -80,24 +78,22 @@
 /* Media query for extra small screens */
 @media (max-width: 576px) {
     .overlay-container {
-        top: 40%;
-        left: 15%;
+        left: 10%;
         padding: 12px;
     }
     .overlay-image {
-        width: 70px;
+        width: 65px;
     }
 }
 
 /* Media query for extra extra small screens */
 @media (max-width: 400px) {
     .overlay-container {
-        top: 35%;
-        left: 20%;
+        left: 10%;
         padding: 10px;
     }
     .overlay-image {
-        width: 30px;
+        width: 50px;
     }
 }
 
