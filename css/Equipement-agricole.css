@@ -11,9 +11,15 @@
     width: 100%;
 }
 
-.background-image {
+#background-image {
     width: 100%;
-    height: 50%;
+    height: 350px;
+    display: block;
+}
+
+#background-image-presetation {
+    width: 100%;
+    height: 520px;
     display: block;
 }
 
@@ -22,14 +28,79 @@
     top: 50%;
     left: 15%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.7); /* الخلفية الشفافة */
-    padding: 20px; /* مساحة حول الصورة */
-    border-radius: 10px; /* حواف دائرية للخلفية */
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
+    padding: 20px; /* Space around the image */
+    border-radius: 10px; /* Rounded corners for the background */
+    text-align: center; /* Center the content */
+    max-width: 90%; /* Ensure it doesn't exceed the viewport width */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .overlay-image {
-    width: 150px; /* يمكنك تعديل هذا حسب الحاجة */
+    width: 150px; /* Default width */
+    height: auto; /* Maintain aspect ratio */
 }
+
+/* Media query for large screens */
+@media (max-width: 1200px) {
+    .overlay-container {
+        top: 45%;
+        left: 20%;
+        padding: 18px;
+    }
+    .overlay-image {
+        width: 130px;
+    }
+}
+
+/* Media query for medium screens (tablets) */
+@media (max-width: 992px) {
+    .overlay-container {
+        top: 40%;
+        left: 15%;
+        padding: 16px;
+    }
+    .overlay-image {
+        width: 110px;
+    }
+}
+
+/* Media query for small screens (phones) */
+@media (max-width: 768px) {
+    .overlay-container {
+        top: 35%;
+        left: 10%;
+        padding: 14px;
+    }
+    .overlay-image {
+        width: 70px;
+    }
+}
+
+/* Media query for extra small screens */
+@media (max-width: 576px) {
+    .overlay-container {
+        top: 40%;
+        left: 15%;
+        padding: 12px;
+    }
+    .overlay-image {
+        width: 70px;
+    }
+}
+
+/* Media query for extra extra small screens */
+@media (max-width: 400px) {
+    .overlay-container {
+        top: 35%;
+        left: 20%;
+        padding: 10px;
+    }
+    .overlay-image {
+        width: 30px;
+    }
+}
+
 
 h3 {
     text-align: center;
@@ -43,32 +114,94 @@ h3 {
 .equipment-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px; /* المسافة بين العناصر */
+    gap: 20px; /* Space between items */
 }
 
 .equipment-item {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 10px;
+    padding: 15px; /* Adjusted padding */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease; /* Added transition */
+    min-height: 256px; /* Adjusted min-height */
+    overflow: hidden; /* Ensure content doesn't overflow */
 }
-.equipment-item:hover{
-    transform: scale(0.75);
-    transition: all 0.5s;
+
+.equipment-item:hover {
+    background: var(--white-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
 }
 
 .equipment-item img {
-    width: 100%;
+    display: block;
+    margin: auto;
+    transition: all 0.5s;
+    width: 75%; /* Initially small */
     height: auto;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
 
+.equipment-item:hover img {
+    width: 100%; /* Scale up on hover */
+}
+
 .equipment-item p {
-    margin: 0;
-    font-size: 16px;
-    color: #333;
+    color: #000000a4; /* Hidden initially */
+    font-size: 15px; /* Adjusted font size */
+    margin-top: 20px;
+    transition: all 0.5s;
+}
+
+.equipment-item:hover p {
+    margin-top: 0;
+    font-size: 17px;
+    color: #000000; /* Color on hover */
+    font-weight: 500;
+}
+
+
+@media (max-width: 992px) {
+    .order-1 {
+        order: 2;
+    }
+    .order-2 {
+        order: 1;
+    }
+}
+
+
+
+/* Media query for devices with a max width of 1200px */
+@media (max-width: 1200px) {
+    #background-image-presetation {
+        height: 400px; /* Adjust height for medium screens */
+    }
+    #background-image {
+        height: 250px; /* Adjust height for medium screens */
+    }
+}
+
+/* Media query for devices with a max width of 768px */
+@media (max-width: 768px) {
+    #background-image-presetation {
+        height: 300px; /* Adjust height for tablets */
+    }
+    #background-image {
+        height: 200px; /* Adjust height for medium screens */
+    }
+}
+
+/* Media query for devices with a max width of 480px */
+@media (max-width: 480px) {
+    #background-image-presetation {
+        height: 100px; /* Adjust height for mobile phones */
+    }
+    #background-image {
+        height: 100px; /* Adjust height for medium screens */
+    }
 }
