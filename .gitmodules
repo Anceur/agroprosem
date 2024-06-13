@@ -1,0 +1,3 @@
+[submodule "boumedieneProject"]
+    path = boumedieneProject
+    url = https://github.com/Anceur/boumedieneProject.git
