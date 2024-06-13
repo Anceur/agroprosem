@@ -1451,8 +1451,7 @@ blockquote::before {
 }
 
 .social-icon-link:hover {
-  background: var(--primary-color);
-  color: var(--white-color);
+  color: var(--custom-btn-bg-hover-color);
 }
 
 
